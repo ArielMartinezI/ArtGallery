@@ -1,0 +1,79 @@
+@use './variables' as *;
+
+//Nuestros mxin de conquer
+@mixin breakpoint($bp){
+  
+  @if $bp == tablet{
+    @media (min-width: $bp-tablet){
+      @content;
+    }
+  }
+
+  @if $bp == tablethorizontal {
+    @media (min-width: $bp-tablet-horizontal){
+      @content;
+    }
+  }
+
+  @if $bp == desktop{
+    @media (min-width: $bp-desktop){
+      @content;
+    }
+  }
+
+  @if $bp == desktopxl{
+    @media (min-width: $bp-desktop-xl){
+      @content;
+    }
+  }
+
+}
+
+@mixin reset_list(){
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  img{
+    max-width: 20px;
+    max-height: 20px;
+  }
+}
+
+@mixin btn1(){
+  display: flex;
+  max-width: max-content;
+  background-color: $color-black;
+  font-family: $primary-font;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 16px;
+  align-items: center;
+  text-transform: uppercase;
+  &:hover{
+    background-color: $color-gold;
+    .figure{
+      background-color: $color-black;
+    }
+  }
+}
+
+@mixin btn2(){
+  display: flex;
+  max-width: max-content;
+  background-color: $color-black;
+  font-family: $primary-font;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  align-items: center;
+  text-transform: uppercase;
+  &:hover{
+    background-color: $color-gold;
+    .figure{
+      background-color: $color-black;
+    }
+  }
+}

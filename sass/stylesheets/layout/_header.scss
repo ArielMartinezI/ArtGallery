@@ -1,0 +1,100 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+header{
+    margin-bottom: 120px;
+    @include breakpoint(tablet){
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 700px;
+        width: 768px;
+        background-image: url('../../../assets/vieja.png');
+        background-repeat: no-repeat;
+        background-size: 60%;
+        .container{
+            position: relative;
+        }
+    }
+    .figure_tablet{
+        display: none;
+        @include breakpoint(desktop){
+            display: none;
+        }
+    }
+    .title{
+        color: $color-black;
+        font-family: $primary-font;
+        font-weight: 800;
+        margin: 32px 16px;
+        font-size: 70px;
+        line-height: 65px;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        @include breakpoint(tablet){
+            color: $color-black;
+            font-family: $primary-font;
+            font-weight: 900;
+            font-size: 70px;
+            line-height: 65px;
+            letter-spacing: 0px;
+            text-transform: uppercase;
+            margin: 0;
+            margin-bottom: 48px;
+        }
+    }
+    .subtitle{
+        font-size: 18px;
+        margin: 0 16px;
+        margin-bottom: 32px;
+        line-height: 28px;
+        color: $color-dark-gray;
+        font-family: $secondaty-font;
+        @include breakpoint(tablet){
+            margin: 0;
+            margin-bottom: 48px;
+            width: 350px;
+        }
+    }
+    .figure_mobile{
+        display: block;
+        @include breakpoint(tablet){
+            display: none;
+        }
+        @include breakpoint(desktop){
+            display: none;
+        }
+    }
+
+    @include breakpoint(desktop){
+        display: initial;
+        .header_content{
+            height: 500px;
+            margin-bottom: 180px;
+            padding: 170px 0px 170px 160px;
+            background: linear-gradient(to right, black 0%, black 32%, transparent 32%, transparent 60%, transparent 50%, transparent 100%), url('../../../assets/vieja2.png') center/contain no-repeat;
+            .container{
+                display: flex;
+                gap: 180px;
+                .title{
+                    color: $color-white;
+                    margin: 0;
+                    height: min-content;
+                    font-size: 82px;
+                    width: 430px;
+                    line-height: 80px;
+                    font-weight: 900;
+                }
+                .container1{
+                    margin-left: 30px;
+                    .subtitle{
+                        font-size: 22px;
+                        font-weight: 400;
+                        width: 350px;
+                        margin-bottom: 100px;
+                    }
+                }
+            }
+        }
+    }
+}
