@@ -11,6 +11,7 @@
     @include breakpoint(tablet){
         background-image: url('../../../assets/mapa_tablet.png');
         display: inherit; //esto es para que tenga el displey predeterminado de todos los elementos
+        background-position-y: 2%;
         .btn2{
             margin-left: 45px;
         }
