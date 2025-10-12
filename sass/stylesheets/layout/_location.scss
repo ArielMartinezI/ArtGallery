@@ -1,0 +1,192 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.header_location{
+    margin: 0;
+    height: 600px;
+    background-image: url('../../../assets/Maps.png');
+    background-repeat: no-repeat;
+    background-size: 109%;
+    background-position-y: 90%;
+    @include breakpoint(tablet){
+        background-image: url('../../../assets/mapa_tablet.png');
+        display: inherit; //esto es para que tenga el displey predeterminado de todos los elementos
+        .btn2{
+            margin-left: 45px;
+        }
+    }
+    
+    @include breakpoint(desktop){
+        background-image: url('../../../assets/map-desktop.png');
+        background-size: 100%;
+        background-position-y: 0;
+        display: inherit;
+        width: 1200px;
+        height: 500px;
+        .btn2{
+            margin-left: 80px;
+        }
+    }
+}
+
+.main_location{
+    background-color: $color-black;
+    margin: 0;
+    padding: 48px 16px 56px 16px;
+    @include breakpoint (tablet){
+        padding: 85px 40px;
+    }
+    @include breakpoint(desktop){
+        padding: 104px 140px 110px 140px;
+    }
+
+    .main_content{
+        @include breakpoint(tablet){
+            display: flex;
+            gap: 68px;
+            .title{
+                width: 200px;
+            }
+            .container .datos span{
+                font-weight: 200;
+            }
+            .container .subtitle{
+                font-weight: 200;
+                width: 400px;
+            }
+        }     
+        @include breakpoint(desktop){
+            justify-content: space-between;
+        }   
+        .title{
+            font-family: $primary-font;
+            color: $color-white;
+            font-weight: 900;
+            font-size: 50px;
+            line-height: 45px;
+            letter-spacing: 0px;
+            text-transform: uppercase;
+            margin-bottom: 48px;
+            @include breakpoint(desktop){
+                font-size: 62px;
+                line-height: 61px;
+            }
+        }
+        .second_title{
+            font-family: $primary-font;
+            color: $color-gold;
+            font-weight: 900;
+            font-size: 32px;
+            line-height: 32px;
+            letter-spacing: 0px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .datos{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            span{ 
+                font-family: $secondaty-font;
+                font-weight: 300;
+                font-size: 18px;
+                color: $color-white;
+                line-height: 28px;
+                letter-spacing: 0px;
+            }
+        }
+        .subtitle{
+            font-family: $secondaty-font;
+            color: $color-white;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0px;
+            width: 340px;
+        }
+        .container{
+            @include breakpoint(desktop){
+                .subtitle{
+                    font-size: 20px;
+                    width: 470px;
+                }
+                .datos span{
+                    font-size: 20px;
+                    font-weight: 200;
+                }
+                .second_title{
+                    margin-bottom: 23px;
+                    font-size: 38px;
+                }
+            }
+        }
+    }
+}
+
+.footer_location{
+    background: $color-gold;
+    margin: 0;
+    padding: 45px 32px 50px 32px;
+    height: 340px;
+    box-sizing: border-box;
+    @include breakpoint(tablet){
+        height: min-content;
+        padding: 56px 40px 20px 40px;
+    }
+    @include breakpoint(desktop){
+        padding: 80px 140px;
+    }
+
+    .footer_content{
+        @include breakpoint(tablet){
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            height: min-content;
+            .subtitle{
+                margin: 0;
+                width: 300px;
+                size: 16px;
+                font-weight: 200;
+                margin-right: 50px;
+                margin-top: 5px;
+            }
+            .logo{
+                width: 110.5px;
+                height: 40px;
+            }
+            .redes a img{
+                width: 100px;
+                height: 20px;
+            }
+        }
+        ul{
+            @include reset_list();
+        }
+        .logo{
+            display: inline-block;
+            margin-bottom: 38px;
+            img{
+                max-width: 120px;
+                height: 50px;
+                opacity: 1;
+                @include breakpoint(desktop){
+                    width: 160px;
+                }
+            }
+        }
+        .subtitle{
+            color: $color-black;
+            width: 320px;
+            font-family: $secondaty-font;
+            margin-bottom: 38px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            letter-spacing: 0px;
+            @include breakpoint(desktop){
+               width: 377px; 
+            }
+        }
+    }
+}

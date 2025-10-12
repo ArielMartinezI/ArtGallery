@@ -1,0 +1,32 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.btn1{
+    @include btn1();
+    color: $color-white;
+    letter-spacing: 3.64px;
+    padding-left: 32px;
+    figure{
+        background-color: $color-gold;
+        padding: 24px;
+        margin-left: 35px;
+    }
+    @include breakpoint(tablet){
+        margin: 0;
+    }
+}
+
+.btn2{
+    @include btn2();
+    color: $color-white;
+    letter-spacing: 3.64px;
+    padding-right: 32px;
+    figure{
+        background-color: $color-gold;
+        padding: 24px;
+        margin-right: 35px;
+        img{
+            rotate: 180deg;
+        }
+    }
+}
