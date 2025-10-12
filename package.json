@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy": "npm run build && cp location.html dist/ && cp -r assets/*.svg dist/assets/ && cp -r sass",
+    "predeploy": "npm run build && cp location.html dist/ && cp -r assets/*.svg dist/assets/ && cp -r sass dist/sass/ ",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
